@@ -1,14 +1,12 @@
 # code-golf-solutions
 
-Solutions to JavaScript code golf challenges, from The Programmer's Hangout
+Solutions to JavaScript code golf challenges, from The Programmer's Hangout Discord.
 
 ## Running
 
-Most of these solutions are written to be executed on Repl.it, and sometimes exploit the properties of NodeJS's interactive REPL to output without calling `console.log`.
+These solutions were written to be executed on Repl.it. They sometimes exploit the behavior of Node's REPL to output without calling `console.log`.  As such, they may not produce output unless they are run in an interactive JavaScript REPL.
 
-As a result, some of them will not reliably output unless their outputs are run in an interactive Node session.
-
-The files can be executed reliably like this:
+Use the `.load` command to reliably execute the scripts.
 
 ```
 $ node

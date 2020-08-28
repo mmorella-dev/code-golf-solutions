@@ -1,6 +1,21 @@
-// 216 bytes + name of input file
-// determines whether the input is a valid solution to a sudoku puzzle
-// i.e. whether each row, column, and 3x3 block contains the numbers 1-9 with no duplicates.
+A=prompt`🧩`.match(/.{9}/g).map(s=>[...s]);for(R=i=9;i--;)R&=[A[i],A.map(r=>r[i]),A.slice((y=(i/3|0)*3),y+3).flatMap(n=>n.slice(i%3*3,i%3*3+3))].every(a=>a.reduce((r,c)=>r|1<<c-1,0)==511)
+// 186 bytes
 
-A=require('fs').readFileSync('03_sudoku_input.csv','utf8').split`
-`.map(l=>l.split`,`);for(R=i=9;i--;)R=R&&[A[i],A.map(r=>r[i]),A.slice((y=(i/3|0)*3),y+3).flatMap(n=>n.slice((x=(i%3)*3),x+3))].every(a=>a.reduce((r,c)=>r|1<<c-1,0)==511)
+/*
+EXAMPLE INPUTS:
+
+111111111222222222333333333444444444555555555666666666777777777888888888999999999
+// 0
+
+987654321987654321987654321987654321987654321987654321987654321987654321987654321
+// 0
+
+123456789234567891345678912456789123567891234678912345789123456891234567912345678
+// 0
+
+864371259325849761971265843436192587198657432257483916689734125713528694542916378
+// 1
+
+346179258187523964529648371965832417472916835813754629798261543631485792254397186
+// 1
+ */
